@@ -668,7 +668,6 @@ footer {
 
 }
 
-/* chatgpt phone */
 @media (max-width: 768px) {
   .about-section {
     margin-top: 10rem;
@@ -689,6 +688,7 @@ footer {
   .bento-grid .btn {
     position: static;
     margin-top: 1rem;
+margin-top: -2rem;
     width: 100%;
   }
 
@@ -708,16 +708,6 @@ footer {
   }
 
 }
-
-/* chatgpt phone */
-
-
-/* chatgpt for tablet */
-
-
-/* chatgpt for tablet */
-
-
 
 @media (min-width: 768px) {
   .contact-grid {
