@@ -23,28 +23,17 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   }, 3000);
 })
 
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-
-const form = document.getElementById('contactForm');
-const successMessage = document.getElementById('successMessage');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const formData = new FormData(form);
-
-  const response = await fetch(form.action, {
-    method: 'POST',
-    body: formData
-  });
-
-  const result = await response.text();
-
-  if (result.trim() === 'success') {
-    form.reset();
-    successMessage.style.display = 'block';
-  } else {
-    alert('There was a problem sending your message.');
-  }
+  emailjs.sendForm("C1TVO1eaRp9w-2wIB", "template_52beiah", this)
+    .then(function () {
+      alert("Message sent successfully!");
+      document.getElementById("contactForm").reset();
+    }, function (error) {
+      alert("Failed to send message. Error: " + JSON.stringify(error));
+    });
 });
+
+
 
