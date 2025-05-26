@@ -26,7 +26,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 document.getElementById("contactForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  emailjs.sendForm("C1TVO1eaRp9w-2wIB", "template_52beiah", this)
+  emailjs.sendForm("service_rw42824", "template_52beiah", this)
     .then(function () {
       alert("Message sent successfully!");
       document.getElementById("contactForm").reset();
