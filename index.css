@@ -131,6 +131,7 @@ main h2 {
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(30, 144, 255);
+z-index: 1000;
 }
 
 .scroll-down::before,
