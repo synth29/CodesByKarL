@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karl'sCode</title>
+  <title>KarL'sCode</title>
   <link rel="stylesheet" href="index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,6 @@
     <a href="https://wa.me/97339478591" target="_blank" rel="noopener noreferrer" class="contact-btn">
       Contact <i class='bx bxl-whatsapp'></i>
     </a>
-
   </header>
 
   <main>
@@ -34,6 +33,9 @@
         <p>BASED<br>IN<br>BAHRAIN</p>
       </div>
     </div>
+
+
+
 
     <div class="bio-section" data-aos="fade-up" data-aos-duration="1500">
       <p class="bio">
@@ -47,14 +49,23 @@
 
     <div class="scroll-down" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"></div>
 
-    <spline-viewer data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
+    <div class="hero-vid-box" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"
+      data-aos-offset="0" data-aos-duration="2100">
+      <video autoplay loop muted playsinline>
+        <source src="images/hero-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- <spline-viewer data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
       data-aos-duration="3000" class="design3D"
-      url="https://prod.spline.design/ux8W1um8EaSB7OkK/scene.splinecode"></spline-viewer>
+      url="https://prod.spline.design/ux8W1um8EaSB7OkK/scene.splinecode"></spline-viewer> -->
 
   </main>
 
   <section class="about-section">
-    <h1 class="about-title" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" id="about">About Me</h1>
+    <h1 class="about-title" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" id="about">About Me
+    </h1>
 
     <div class="bento-grid">
       <div class="card intro" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
@@ -160,17 +171,17 @@
       <div class="info-card">
         <div class="info-card-content">
           <h3>Bring your ideas my way!</h3>
-          <form id="contactForm" action="contact.php" method="POST">
+          <form id="contactForm">
             <div class="form-group">
-              <input type="text" id="name" name="name" placeholder="Your Name" required class="form-control">
+              <input type="text" name="name" id="name" placeholder="Your Name" required class="form-control">
             </div>
 
             <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Your Email" required class="form-control">
+              <input type="email" name="email" id="email" placeholder="Your Email" required class="form-control">
             </div>
 
             <div class="form-group">
-              <input type="text" id="subject" name="subject" placeholder="Subject" required class="form-control">
+              <input type="text" name="subject" id="subject" placeholder="Subject" required class="form-control">
             </div>
 
             <div class="form-group">
@@ -207,15 +218,27 @@
   </script>
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
 
-  <script src="index.js"></script>
+  <!-- <script src="index.js"></script>
 
- <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
     (function () {
-      emailjs.init("9KtlVYXDeXHLSfQ3p");
+      emailjs.init("9KtlVYXDeXHLSfQ3p"); // Replace with your EmailJS user ID
+    })();
+  </script> -->
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <!-- EmailJS Init -->
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("9KtlVYXDeXHLSfQ3p"); // ✅ Your Public Key (user ID)
     })();
   </script>
 
+  <!-- Your script -->
+  <script src="index.js"></script>
 
 </body>
 
