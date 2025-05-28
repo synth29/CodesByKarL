@@ -1,3 +1,10 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 Body {
   background: #080505;
   background: linear-gradient(90deg, rgba(8, 5, 5, 1) 0%, rgb(0, 19, 61) 52%, rgba(10, 1, 1, 1) 100%, rgba(0, 17, 79, 1) 100%);
@@ -6,6 +13,7 @@ Body {
   color: white;
   padding: 3rem;
   position: relative;
+  overflow-x: hidden;
 
 }
 
@@ -16,16 +24,19 @@ Body {
   padding: 0;
   box-sizing: border-box;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* outline: 1px solid red; */
 }
 
 
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 2rem;
-  z-index: 1000;
-  position: relative;
+  z-index: 10;
+  /* Optional: semi-transparent backdrop */
+  backdrop-filter: blur(8px);
+  /* Optional: glass effect */
 }
 
 .logo {
@@ -56,8 +67,8 @@ header {
 /* MAIN SECTION */
 
 main {
-  overflow: hidden;
-  display: flex;
+
+  display: block;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
@@ -120,6 +131,7 @@ main h2 {
   font-weight: 300;
   letter-spacing: 1px;
   max-width: 22rem;
+  margin-top: 15rem;
 }
 
 .scroll-down {
@@ -127,11 +139,11 @@ main h2 {
   width: 2rem;
   position: absolute;
   right: 2%;
-  bottom: 75%;
+  bottom: 78%;
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(30, 144, 255);
-z-index: 1000;
+  z-index: 1000;
 }
 
 .scroll-down::before,
@@ -175,13 +187,57 @@ z-index: 1000;
 
 /* 3D design */
 
-.design3D {
+.hero-vid-box {
+  position: relative;
+  width: 40rem;
+  /* Adjust size */
+  max-width: 100%;
+  margin-top: -40rem;
+  margin-left: 37rem;
+  margin-right: 20rem;
+  /* Push to right side */
+  border-radius: 12px;
+  overflow: hidden;
+  mix-blend-mode: lighten;
+  /* or use soft-light / screen */
+  opacity: 0.8;
+  /* for subtle blend */
+  z-index: 1;
+}
+
+.hero-vid-box video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.hero-vid-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  /* subtle dark overlay */
+  z-index: 0;
+}
+
+/* Optional: Styling for the rest of the layout */
+main {
+  padding: 1rem;
+}
+
+/* .design3D {
   position: absolute;
   top: -7%;
   right: 0%;
   width: 100%;
   height: 45%;
-}
+  display: block;
+} */
 
 
 /*ABOUT SECTION*/
@@ -512,16 +568,29 @@ footer {
 
 @media (max-width: 1400px) {
   main h1 {
-    font-size: 7.6rem;
+    font-size: 7.4rem;
     letter-spacing: 0;
   }
 
-  .design3D {
+  .bio {
+    margin-top: 30rem;
+  }
+
+  /* .design3D {
     position: absolute;
     top: 6%;
     width: 90%;
     height: 50rem;
     margin-right: 60px;
+  } */
+
+  .hero-vid-box {
+    width: 35rem;
+    max-width: 100%;
+    margin: -50rem 7rem 0 auto;
+    /* center it on tablets */
+    opacity: 0.9;
+
   }
 
   .bento-grid {
@@ -531,7 +600,7 @@ footer {
   }
 
   .scroll-down {
-    bottom: 68%;
+    bottom: 72.5%;
   }
 
   .card-title {
@@ -587,16 +656,26 @@ footer {
     margin-top: -3rem;
   }
 
-  .design3D {
+  .hero {
+    align-items: center;
+  }
+
+  .hero-vid-box {
+    max-width: 90%;
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  /* .design3D {
     position: absolute;
     top: 20rem;
     margin-left: 5px;
     width: 20rem;
     height: 20rem;
-  }
+  } */
 
   .scroll-down {
-    bottom: 74.2%;
+    bottom: 76.5%;
   }
 
   .bio-section {
@@ -669,9 +748,24 @@ footer {
 
 }
 
+/* chatgpt phone */
 @media (max-width: 768px) {
   .about-section {
     margin-top: 10rem;
+  }
+
+  .bio {
+    margin-top: 20rem;
+  }
+
+
+  .hero-vid-box {
+    width: 25rem;
+    max-width: 100%;
+    margin: -35rem 5rem 0 2rem;
+    /* center it on tablets */
+    opacity: 0.9;
+
   }
 
   .card {
@@ -688,8 +782,7 @@ footer {
 
   .bento-grid .btn {
     position: static;
-    margin-top: 1rem;
-margin-top: -2rem;
+    margin-top: -2rem;
     width: 100%;
   }
 
@@ -710,15 +803,43 @@ margin-top: -2rem;
 
 }
 
+/* chatgpt phone */
+
+
+/* chatgpt for tablet */
+
+
+/* chatgpt for tablet */
+
+
+
 @media (min-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
+
 }
 
 @media (max-width: 480px) {
   body {
     padding: 1rem;
+  }
+
+  .bio {
+    margin-top: 13rem;
+  }
+
+
+  .hero-vid-box {
+    width: 20rem;
+    max-width: 100%;
+    margin: -28rem 5rem 0 2rem;
+    /* center it on tablets */
+    opacity: 0.9;
+  }
+
+  .scroll-down {
+    bottom: 79.8%;
   }
 
   main h2 {
@@ -734,6 +855,10 @@ margin-top: -2rem;
     font-size: 1rem;
   }
 
+  .btn {
+    margin-top: -10rem;
+  }
+
   .contact-btn {
     padding: 0.4rem 1.5rem;
     font-size: 0.9rem;
@@ -744,15 +869,87 @@ margin-top: -2rem;
     top: 17%;
   }
 
-  .design3D {
+  /* .design3D {
     position: absolute;
     width: 20rem;
     left: 40px;
-  }
+  } */
 }
 
 @media (max-width: 768px) {
   main h1 {
     display: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  .bio {
+    margin-top: 20rem;
+  }
+
+
+  .hero-vid-box {
+    width: 40rem;
+    max-width: 100%;
+    margin: -35rem 5rem 0 60rem;
+    /* center it on tablets */
+    opacity: 0.9;
+
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero-vid-box {
+    width: 80%;
+    max-width: 500px;
+    margin: -50rem 2rem 0 auto;
+    position: relative;
+    opacity: 0.85;
+    mix-blend-mode: lighten;
+  }
+
+  .bento-grid .btn {
+    margin-bottom: -10px;
+
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .hero-vid-box {
+    width: 60%;
+    max-width: 600px;
+    margin: -50rem 8rem 0 auto;
+    /* Center it */
+    position: relative;
+    opacity: 0.85;
+    mix-blend-mode: lighten;
+    z-index: 1;
+  }
+
+  .hero-vid-box video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .scroll-down {
+    bottom: 74.8%;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .card-text {
+    margin: 10px 0 25px;
+    height: 15px;
+    bottom: -15px;
+    padding: -15px;
+
+  }
+
+  .bento-grid {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
   }
 }
