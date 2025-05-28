@@ -23,6 +23,31 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   }, 3000);
 })
 
+
+
+// const form = document.getElementById('contactForm');
+// const successMessage = document.getElementById('successMessage');
+
+// form.addEventListener('submit', async (e) => {
+//   e.preventDefault();
+
+//   const formData = new FormData(form);
+
+//   const response = await fetch(form.action, {
+//     method: 'POST',
+//     body: formData
+//   });
+
+//   const result = await response.text();
+
+//   if (result.trim() === 'success') {
+//     form.reset();
+//     successMessage.style.display = 'block';
+//   } else {
+//     alert('There was a problem sending your message.');
+//   }
+// });
+
 document.getElementById("contactForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -35,9 +60,8 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     });
 });
 
+
 document.querySelector('.scroll-down').addEventListener('click', function () {
   document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
 });
-
-
 
